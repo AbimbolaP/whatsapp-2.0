@@ -4,19 +4,38 @@ import 'firebase/compat/firestore';
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCj0XzddtH2OXY9iwcr864oiX3hRlNYDuQ",
-  authDomain: "whatsapp-2-76e87.firebaseapp.com",
-  projectId: "whatsapp-2-76e87",
-  storageBucket: "whatsapp-2-76e87.appspot.com",
-  messagingSenderId: "1069010845506",
-  appId: "1:1069010845506:web:036fd6e0d670f63f3052db",
-  measurementId: "G-EWLDR2LXEN"
+  apiKey: "AIzaSyC9m6id7ByTmQLG2TSgc7bQmzBNR56IH2I",
+  authDomain: "chatapp-99020.firebaseapp.com",
+  projectId: "chatapp-99020",
+  storageBucket: "chatapp-99020.appspot.com",
+  messagingSenderId: "884711256313",
+  appId: "1:884711256313:web:2555299eabfab0ac9fb228"
 };
-const app = initializeApp(firebaseConfig);
-const firebaseApp = firebase.initializeApp(firebaseConfig);
-const db = firebaseApp.firestore();
-const auth = firebase.auth();
+
+const app = !firebase.apps.length 
+? firebase.initializeApp(firebaseConfig) 
+: firebase.app();
+
+const db = app.firestore();
+const auth = app.auth();
 const provider = new firebase.auth.GoogleAuthProvider();
 
-export { auth, provider };
-export default db;
+export { auth, db, provider};
+
+// // Import the functions you need from the SDKs you need
+// import { initializeApp } from "firebase/app";
+// // TODO: Add SDKs for Firebase products that you want to use
+// // https://firebase.google.com/docs/web/setup#available-libraries
+
+// // Your web app's Firebase configuration
+// const firebaseConfig = {
+//   apiKey: "AIzaSyC9m6id7ByTmQLG2TSgc7bQmzBNR56IH2I",
+//   authDomain: "chatapp-99020.firebaseapp.com",
+//   projectId: "chatapp-99020",
+//   storageBucket: "chatapp-99020.appspot.com",
+//   messagingSenderId: "884711256313",
+//   appId: "1:884711256313:web:2555299eabfab0ac9fb228"
+// };
+
+// // Initialize Firebase
+// const app = initializeApp(firebaseConfig);

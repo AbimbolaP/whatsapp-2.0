@@ -3,7 +3,7 @@ import "./Chat.css";
 import { Avatar, IconButton } from '@mui/material';
 import { AttachFile, InsertEmoticon, Mic, MoreVert, SearchOutlined } from '@mui/icons-material';
 import { useParams } from 'react-router-dom';
-import db from "../firebase"
+import { db } from "../firebase"
 import firebase from 'firebase/compat/app';
 // import '@firebase/firestore' 
 import { useStateValue } from "../StateProvider";

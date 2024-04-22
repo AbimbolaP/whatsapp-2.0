@@ -3,8 +3,9 @@ import './Sidebar.css';
 import { Avatar, IconButton } from '@mui/material';
 import { Chat, DonutLarge, MoreVert, SearchOutlined } from '@mui/icons-material';
 import SidebarChat from '../components/SidebarChat';
-import db from "../firebase";
+import { db,  auth } from "../firebase";
 import { useStateValue } from '../StateProvider';
+
 
 function Sidebar() {
   const [rooms, setRooms] = useState([]);
@@ -27,7 +28,7 @@ function Sidebar() {
   return (
     <div className='sidebar'>
       <div className='sidebar_header'>
-        <Avatar  src={user?.photoURL} />
+        <Avatar  src={user?.photoURL}  onClick={() => auth.signOut()}  style={{cursor : "pointer"}} />
         <div className='sidebar_headerRight'>
           <IconButton>
             <DonutLarge />
